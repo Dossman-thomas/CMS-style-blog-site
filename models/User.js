@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize'); // import the model class and dataypes from sequelize library. 
+const { Model, DataTypes } = require('sequelize'); // import the model class and dataypes from sequelize library 
 const bcrypt = require('bcrypt'); // for hashing passwords
 const sequelize = require('../config/connection'); // imports instance of sequelize created in 'connection.js'
 
