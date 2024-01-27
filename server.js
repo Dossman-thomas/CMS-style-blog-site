@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3001; // sets port number either the one specif
 const hbs = exphbs.create({ helpers: require("./utils/helpers") }); // handlebars.js engine w/custom helper functions
 
 const sess = { // defines session config object w/secret key, cookie settings and sequelize store
-  secret: '',
+  secret: 'Very secret',
   cookie: {
     maxAge: 300000,
     httpOnly: true,
