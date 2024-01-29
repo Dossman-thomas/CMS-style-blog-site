@@ -1,3 +1,57 @@
-const router = require('express').Router();
+// Import dependencies
+const router = require('express').Router(); 
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+// Create a new post route
+router.post('/', withAuth, async (req, res) => { // defines a new POST route for creating a new post. It uses the withAuth middleware, which means the user must be authenticated to access this route
+
+  try {
+
+    const newPost = await Post.create({ // create a new post in the database using the Post.create method. The post data is taken from the request body (req.body), and the user_id is set based on the currently authenticated user (req.session.user_id)
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newPost); // If successful, it responds with a status code of 200 (OK) and a JSON object containing the newly created post
+
+  } catch (err) {
+
+    res.status(400).json(err); // If there's an error (e.g., validation error), it responds with a status code of 400 (Bad Request) and sends the error details in the response JSON
+
+  }
+});
+
+// Delete a specific post based on id
+router.delete('/:id', withAuth, async (req, res) => { // This line defines a new DELETE route for deleting a post. It also uses the withAuth middleware to ensure the user is authenticated
+
+  try {
+    // Make sure all comments related to post that is being deleted, are also deleted. 
+    await Comment.destroy({
+    where: { post_id: req.params.id },
+    });
+
+    const postData = await Post.destroy({ // delete a specific post from the database using the Post.destroy method. It looks for a post with the specified id (req.params.id) and checks that the post belongs to the currently authenticated user (req.session.user_id)
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!postData) { // If no post is found with the specified id, it responds with a status code of 404 (Not Found) and a corresponding message.
+      res.status(404).json({ message: 'No post found with this id!' });
+
+      return;
+
+    }
+
+    res.status(200).json(postData); // If a post is successfully deleted, it responds with a status code of 200 (OK) and a JSON object containing information about the deleted post
+
+  } catch (err) {
+
+    res.status(500).json(err); // If there's an error during the deletion process, it responds with a status code of 500 (Internal Server Error) and sends the error details in the response JSON
+
+  }
+});
+
+module.exports = router; // exports the configured router, making it available for use in other parts of the application
