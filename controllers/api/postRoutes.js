@@ -3,6 +3,33 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+// Get all posts for a user route
+router.get('/', async (req, res) => {
+
+  try {
+    
+
+  } catch (err) {
+    
+
+  }
+
+});
+
+// get one post by ID route
+router.get('/:id', async (req, res) => {
+
+  try {
+    
+    
+  } catch (err) {
+    
+
+  }
+
+});
+
 // Create a new post route
 router.post('/', withAuth, async (req, res) => { // defines a new POST route for creating a new post. It uses the withAuth middleware, which means the user must be authenticated to access this route
 
@@ -22,7 +49,30 @@ router.post('/', withAuth, async (req, res) => { // defines a new POST route for
   }
 });
 
-// Delete a specific post based on id
+// Update an existing post w/ user edits route
+router.put('/:id', withAuth, async (req, res) => { //  route is specified as '/put/:id', where :id is a route parameter representing the id of the post to be updated. It also uses the withAuth middleware, ensuring that the user must be authenticated to access this route
+
+  try {
+
+    const editedPost = await Post.update(req.body, { // update a post in the database using the Post.update method. It takes the data from the request body (req.body) and updates the post where the id matches the value provided in the route parameter (req.params.id)
+      where: { id: req.params.id }
+    });
+
+    if (!editedPost){ // After attempting the update, it checks if the editedPost value is falsy. If the post is not found (falsy), it responds with a status code of 404 (Not Found) and a JSON object containing an appropriate error message
+      res.status(404).json({ message: 'No post found with that id!'})
+    }
+
+    res.status(200).json(editedPost); // If the post is successfully updated, it responds with a status code of 200 (OK) and a JSON object containing information about the edited post
+    
+  } catch (err) {
+    
+    res.status(500).json(err); // If an error occurs during the execution of the try block (e.g., a database error), it catches the error. It then responds with a status code of 500 (Internal Server Error) and sends the error details in the response JSON
+
+  }
+
+});
+
+// Delete a specific post based on id route
 router.delete('/:id', withAuth, async (req, res) => { // This line defines a new DELETE route for deleting a post. It also uses the withAuth middleware to ensure the user is authenticated
 
   try {
