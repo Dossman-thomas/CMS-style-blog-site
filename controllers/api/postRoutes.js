@@ -5,13 +5,24 @@ const withAuth = require('../../utils/auth');
 
 
 // Get all posts for a user route
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => { // The route is specified as '/', meaning it corresponds to the root path (api/post/)
 
   try {
     
+    const postData = await Post.findAll({ // use the Sequelize findAll method to query the database for all posts. The query includes an association with the User model, specifying that the associated user's username attribute should be included in the results
+      include: [
+        {
+          model: User,
+          attributes: 'username'
+        }
+      ]
+    }); 
+
+    res.status(200).json(postData); // If the database query is successful, it responds with a status code of 200 (OK) and a JSON object containing the retrieved post data
 
   } catch (err) {
     
+    res.status(500).json(err); // If an error occurs during the execution of the try block (e.g., a database error), it catches the error. It then responds with a status code of 500 (Internal Server Error) and sends the error details in the response JSON
 
   }
 
