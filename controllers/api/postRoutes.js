@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 
 
 // Get all posts for a user route
-router.get('/', async (req, res) => { // The route is specified as '/', meaning it corresponds to the root path (api/post/)
+router.get('/', async (req, res) => { // The route is specified as '/', meaning it corresponds to the root path (api/posts/)
 
   try {
     
@@ -29,13 +29,38 @@ router.get('/', async (req, res) => { // The route is specified as '/', meaning 
 });
 
 // get one post by ID route
-router.get('/:id', async (req, res) => {
+router.get('/:id', async (req, res) => { // The route is specified with a parameter :id, representing the id of the post to be retrieved (example: '/posts/3')
 
   try {
     
+    const postData = await Post.findByPk(req.params.id, { // use the Sequelize findByPk method to query the database for a specific post based on the id parameter (req.params.id). The query includes associations with the User model to retrieve the post's author username and the Comment model with an association to the User model to retrieve the username of the comment authors
+      include: [
+        {
+          model: User,
+          attributes: 'username'
+        },
+        {
+          model: Comment,
+          include: [
+            {
+              model: User,
+              attributes: 'username'
+            }
+          ]
+        }
+      ]
+    });
+
+    if (!postData){ // After the database query, it checks if the postData value is falsy. If no post is found (falsy), it responds with a status code of 404 (Not Found) and a JSON object containing an appropriate error message 
+      res.status(404).json({ message: 'No post found with that id!'});
+
+    };
+
+    res.status(200).json(postData); // If the post is found, it responds with a status code of 200 (OK) and a JSON object containing the retrieved post data, including the associated user's username and comments with associated usernames
     
   } catch (err) {
     
+    res.status(500).json(err); // If an error occurs during the execution of the try block (e.g., a database error), it catches the error. It then responds with a status code of 500 (Internal Server Error) and sends the error details in the response JSON
 
   }
 
