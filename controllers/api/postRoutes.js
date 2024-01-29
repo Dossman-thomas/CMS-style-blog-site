@@ -1,6 +1,6 @@
 // Import dependencies
 const router = require('express').Router(); 
-const { Post } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
