@@ -36,6 +36,6 @@ const posts = [
 ];
 
 // define a function that inserts multiple records into the 'posts' table based on the data in the 'posts' array above
-const postData = () => Post.bulkCreate(posts);
+const seedPostData = () => Post.bulkCreate(posts);
 
-module.exports = postData;
+module.exports = seedPostData;
