@@ -3,9 +3,25 @@ const router = require('express').Router();
 const { User } = require('../../models'); // allows application to interact w/the 'users' table
 
 // route to get all users 
-// router.get('/', async (req, res) => {
+router.get('/', async (req, res) => { // When a GET request is made to the root path, the following code is executed.
 
-// });
+  try {
+
+    const userData = await User.findAll({ // fetch user data using User.findAll() method. The attributes option is used to exclude the 'password' field from the returned user data so user passwords remain private
+      attributes: {
+        exclude: 'password'
+      }
+    });
+
+    res.status(200).json(userData); // If the database query is successful, it responds with a status code of 200 (OK) and a JSON object containing the retrieved user data
+    
+  } catch (err) {
+    
+    res.status(500).json(err); // If an error occurs during the execution of the try block (e.g., a database error), it catches the error. It then responds with a status code of 500 (Internal Server Error) and sends the error details in the response JSON
+
+  }
+
+});
 
 // Sign up route (create a new user)
 router.post('/signup', async (req, res) => {
