@@ -37,6 +37,11 @@ p {
   margin-left: 1rem;
 }
 
+#daily-dev-dose:hover {
+  font-size: 4.8rem;
+  transition: .1s;
+}
+
 .post-titles {
   color: black;
   text-decoration: none;
@@ -46,11 +51,14 @@ p {
 .post-titles:hover {
   color: black; 
   text-decoration: underline; 
+  transition: .1s;
 }
 
 #login:hover,
 #signup:hover {
-  color: var(--hover);
+  /* color: var(--accent); */
+  font-size: 1.3rem;
+  transition: .1s;
 }
 
 .card-container {
@@ -75,6 +83,7 @@ p {
 
 .card:hover {
   border: 5px solid black;
+  transition: .3s;
 }
 
 .post-by {
