@@ -1,15 +1,39 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+:root {
+  --h1: white;
+  --nav-links: white; 
+  --main-color: ;
+  --dark: rgb(20, 20, 20);
+  --light: #1b89bc;
+  --accent: #cc1111;
+}
+
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+  background-color: var(--dark);
+  height: 90px;  
+}
+
+#daily-dev-dose {
+  color: var(--h1);
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.project:not(:last-child) {
+  border-bottom: 2px solid var(--accent);
 }
 
 .no-button {
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
+  color: var(--light);
   text-decoration: none;
   font-size: 100%;
+  cursor: pointer;
 }
 
 .no-button:hover {
@@ -17,8 +41,10 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+#login,
+#signup {
+  margin-right: 1rem;
+  font-weight: 600;
+  color: var(--nav-links); 
 }
+

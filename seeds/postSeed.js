@@ -23,16 +23,6 @@ const posts = [
     content: 'Python is widely used for data science and machine learning...',
     user_id: 3, // Assuming user with id 4 exists
   },
-  {
-    title: 'CSS Flexbox Tutorial',
-    content: 'Learn how to use CSS Flexbox to create flexible and responsive layouts...',
-    user_id: 1, // Assuming user with id 1 exists
-  },
-  {
-    title: 'Databases and SQL Basics',
-    content: 'Understanding the fundamentals of databases and SQL...',
-    user_id: 2, // Assuming user with id 2 exists
-  },
 ];
 
 // define a function that inserts multiple records into the 'posts' table based on the data in the 'posts' array above
