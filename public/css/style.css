@@ -2,7 +2,7 @@
   --h1: white;
   --nav-links: white; 
   --main-color: ;
-  --dark: rgb(20, 20, 20);
+  --dark: rgb(4, 25, 35);
   --light: #1b89bc;
   --accent: #cc1111;
 }
@@ -13,16 +13,61 @@
 
 header {
   background-color: var(--dark);
-  height: 90px;  
+  height: 100px;  
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.778);
+}
+
+footer {
+  background-color: var(--dark);
+  height: 80px;  
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.778);
+}
+
+body {
+  background-color: var(--dark);
+}
+
+p {
+  margin: 0;
 }
 
 #daily-dev-dose {
   color: var(--h1);
+  font-family: 'Honk', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 4.5rem;
   font-weight: 600;
   margin-left: 1rem;
 }
+.post-titles {
+  color: black;
+}
 
-.project:not(:last-child) {
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+  gap: 7px; /* Adjust the gap between cards */
+}
+
+.card {
+  max-width: 400px;
+  width: 100%; /* Ensure cards take up full width within the flex container */
+  margin: 15px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: -8px 20px 15px rgba(0, 0, 0, 0.778);
+  background-color: #fff;
+}
+
+h2 {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.post:not(:last-child) {
   border-bottom: 2px solid var(--accent);
 }
 
