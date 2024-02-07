@@ -29,7 +29,7 @@ router.get('/', async (req, res) => { // The route is specified as '/', meaning 
 });
 
 // get one post by ID route
-router.get('/:id', async (req, res) => { // The route is specified with a parameter :id, representing the id of the post to be retrieved (example: '/posts/3')
+router.get('/:id', withAuth, async (req, res) => { // The route is specified with a parameter :id, representing the id of the post to be retrieved (example: '/post/3')
 
   try {
     

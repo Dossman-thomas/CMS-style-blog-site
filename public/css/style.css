@@ -1,3 +1,5 @@
+/* ------------------------------------------------------------- */
+/* CSS VARIABLES */
 :root {
   --nav-links: #fff; 
   --dark: rgb(4, 25, 35);
@@ -6,10 +8,16 @@
   --hover: #eb3298;
 }
 
+/* ------------------------------------------------------------- */
+
+/* UNIVERSAL */
 * {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* ------------------------------------------------------------- */
+
+/* MAIN CSS */
 header {
   background-color: var(--dark);
   height: 100px;  
@@ -30,6 +38,27 @@ p {
   margin: 0;
 }
 
+h2 {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--nav-links);
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--light);
+  text-decoration: none;
+  font-size: 100%;
+  cursor: pointer;
+}
+
+.no-button:hover {
+  color: var(--hover);
+}
+
 #daily-dev-dose {
   font-family: 'Honk', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 4.5rem;
@@ -42,6 +71,26 @@ p {
   transition: .1s;
 }
 
+#dashboard,
+#login,
+#signup {
+  margin-right: 1rem;
+  font-weight: 600;
+  color: var(--nav-links); 
+}
+
+#dashboard:hover,
+#login:hover,
+#signup:hover {
+  /* color: var(--accent); */
+  font-size: 1.3rem;
+  transition: .1s;
+}
+
+/* ------------------------------------------------------------- */
+
+/* HOMEPAGE CSS */
+
 .post-titles {
   color: black;
   text-decoration: none;
@@ -51,14 +100,6 @@ p {
 .post-titles:hover {
   color: black; 
   text-decoration: underline; 
-  transition: .1s;
-}
-
-#dashboard:hover,
-#login:hover,
-#signup:hover {
-  /* color: var(--accent); */
-  font-size: 1.3rem;
   transition: .1s;
 }
 
@@ -92,35 +133,33 @@ p {
   font-weight: 500;
 }
 
-h2 {
-  font-family: "Agdasima", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
 .post:not(:last-child) {
   border-bottom: 2px solid var(--accent);
 }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  color: var(--light);
-  text-decoration: none;
-  font-size: 100%;
-  cursor: pointer;
+/* ------------------------------------------------------------- */
+
+/* LOGIN/SIGNUP CSS */
+
+label {
+  color: var(--nav-links);
 }
 
-.no-button:hover {
-  color: var(--hover);
-}
 
-#dashboard,
-#login,
-#signup {
-  margin-right: 1rem;
-  font-weight: 600;
-  color: var(--nav-links); 
-}
+
+
+
+
+/* ------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
 

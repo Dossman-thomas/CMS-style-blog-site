@@ -4,13 +4,13 @@ const loginFormHandler = async (event) => {
   event.preventDefault(); // prevents the default behavior of form submission, allowing the function to handle the submission manually
 
   // retrieve the values entered in the email and password fields of the login form and trim any leading or trailing whitespace
-  const email = document.querySelector('#email-login').value.trim();
+  const email = document.querySelector('#username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) { // ensures that both email and password have non-empty values
 
     // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
+    const response = await fetch('/api/dashboard/login', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
