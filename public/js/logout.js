@@ -2,7 +2,7 @@
 const logout = async () => { 
 
   // Use the fetch function to send a POST request to the '/api/users/logout' endpoint
-  const response = await fetch('/api/users/logout', {
+  const response = await fetch('/api/dashboard/logout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
   });
