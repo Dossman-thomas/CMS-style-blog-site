@@ -6,8 +6,8 @@ const postRoutes = require('./postRoutes');
 const commentRoutes = require('./commentRoutes');
 
 // mount the imported route handlers under specific base paths:
-router.use('/users', userRoutes);
-router.use('/posts', postRoutes); 
-router.use('/comments', commentRoutes); 
+router.use('/dashboard', userRoutes);
+router.use('/post', postRoutes); 
+router.use('/comment', commentRoutes); 
 
 module.exports = router; // export the configured router

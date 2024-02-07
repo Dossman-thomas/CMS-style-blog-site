@@ -54,6 +54,7 @@ p {
   transition: .1s;
 }
 
+#dashboard:hover,
 #login:hover,
 #signup:hover {
   /* color: var(--accent); */
@@ -115,6 +116,7 @@ h2 {
   color: var(--hover);
 }
 
+#dashboard,
 #login,
 #signup {
   margin-right: 1rem;

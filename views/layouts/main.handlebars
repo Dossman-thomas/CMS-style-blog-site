@@ -24,9 +24,10 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a id="dashboard" href="/users">Dashboard</a> |
+        <a id="dashboard" href="/dashboard">Dashboard</a> |
         <button class="no-button" id="logout">Logout</button>
         {{else}}
+        <a id="dashboard" href="/dashboard">Dashboard</a> 
         <a id="login" href="/login">Login</a>
         <a id="signup" href="/signup">Signup</a>
         {{/if}}

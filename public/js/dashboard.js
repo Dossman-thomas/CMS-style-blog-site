@@ -6,7 +6,7 @@ const newFormHandler = async (event) => {
   const content = document.querySelector('#post-content').value.trim();
 
   if (title && content) {
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/post`, {
       method: 'POST',
       body: JSON.stringify({ title, content }),
       headers: {
@@ -15,7 +15,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/users');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to create project');
     }
@@ -28,13 +28,13 @@ const delButtonHandler = async (event) => {
 
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/post/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
 
-      document.location.replace('/users');
+      document.location.replace('/dashboard');
 
     } else {
 
