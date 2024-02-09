@@ -36,9 +36,11 @@ body {
 
 p {
   margin: 0;
+  color: var(--nav-links);
 }
 
-h2 {
+h2,
+h3 {
   font-family: "Agdasima", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -145,27 +147,44 @@ label {
   color: var(--nav-links);
 }
 
-#login-btn {
+.login-form,
+.signup-form {
+  box-shadow: -8px 20px 15px rgba(0, 0, 0, 0.778);
+  padding: 26px;
+  border-radius: 20px;
+}
+
+#why-signup {
+  margin: 9px;
+  text-align: center;
+}
+
+#login-btn,
+#signup-btn {
   margin-top: 11px;
   color: black;
   background: linear-gradient(to bottom, white, var(--light), var(--hover));
-  padding: 1rem;
+  padding: 10px;
   border: none; 
-  font-weight: 600;
+  border-radius: 10px;
+  font-weight: 400;
   font-size: 1.5rem;
 }
 
-#login-btn:hover {
+#login-btn:hover,
+#signup-btn:hover {
   border: 5px solid black;
+  font-weight: bold;
   transition: .3s;
 }
 
-
-
-
 /* ------------------------------------------------------------- */
 
+/* DASHBOARD CSS */
 
+#welcome {
+  font-size: 3rem;
+}
 
 
 

@@ -1,5 +1,5 @@
 {
-  "name": "Blog-Site",
+  "name": "DailyDevDose",
   "version": "1.0.0",
   "description": "a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers' posts as well.",
   "main": "server.js",

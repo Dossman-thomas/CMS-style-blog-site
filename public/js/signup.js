@@ -19,7 +19,7 @@ const signupFormHandler = async (event) => {
 
     if (response.ok) {
 
-      document.location.replace('/'); // If successful, redirect the browser to the home page
+      document.location.replace('/dashboard'); // If successful, redirect the browser to the dashboard page
 
     } else {
 
