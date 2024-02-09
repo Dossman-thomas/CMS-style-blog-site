@@ -18,10 +18,10 @@ Post.init(
       allowNull: false,
     }, 
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        len: [8, 5000], // validate user inputs some content
+        len: [8, 5000], // validate user inputs some content between 8 and 5000 characters
       },
     },
     date_created: { // logs date post was created in posts table
