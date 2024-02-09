@@ -18,7 +18,7 @@
 
       <div class="form-group">
 
-        <label for="post-name">
+        <label for="post-title">
           post title:
         </label>
 
@@ -51,6 +51,7 @@
         <button 
         type="submit" 
         class="btn btn-primary"
+        id="create-btn"
         >
           Create
         </button>
@@ -73,7 +74,7 @@
 
       <div class="col-md-8">
 
-        <h4><a href="/posts/{{post.id}}">{{post.title}}</a></h4>
+        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
 
       </div>
 
@@ -93,4 +94,5 @@
 
 </div>
 
-<script src="./js/dashboard.js"></script>
+<script src="./js/create-post.js"></script>
+<script src="./js/delete-post.js"></script>

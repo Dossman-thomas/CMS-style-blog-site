@@ -21,7 +21,7 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8], // validate user inputs some content
+        len: [8, 5000], // validate user inputs some content
       },
     },
     date_created: { // logs date post was created in posts table

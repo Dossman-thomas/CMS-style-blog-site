@@ -66,7 +66,7 @@ router.get('/:id', withAuth, async (req, res) => { // The route is specified wit
 
 });
 
-// Create a new post route
+// Create a new post route /api/post
 router.post('/', withAuth, async (req, res) => { // defines a new POST route for creating a new post. It uses the withAuth middleware, which means the user must be authenticated to access this route
 
   try {

@@ -160,7 +160,8 @@ label {
 }
 
 #login-btn,
-#signup-btn {
+#signup-btn,
+#create-btn {
   margin-top: 11px;
   color: black;
   background: linear-gradient(to bottom, white, var(--light), var(--hover));
@@ -172,7 +173,8 @@ label {
 }
 
 #login-btn:hover,
-#signup-btn:hover {
+#signup-btn:hover,
+#create-btn:hover {
   border: 5px solid black;
   font-weight: bold;
   transition: .3s;
