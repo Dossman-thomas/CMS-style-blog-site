@@ -76,7 +76,7 @@ router.post('/', withAuth, async (req, res) => { // defines a new POST route for
       user_id: req.session.user_id,
     });
 
-    console.log('New Post:', newPost);
+    // console.log('New Post:', newPost);
 
     res.status(200).json(newPost); // If successful, it responds with a status code of 200 (OK) and a JSON object containing the newly created post
 

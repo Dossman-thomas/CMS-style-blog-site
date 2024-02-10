@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h2 class="mb-4">{{post.title}}</h2>
+  <p>{{post.content}}</p>
+</div>
+
+<div class="container mt-4">
+  <h4>Comments</h4>
+
+  {{#if comments.length}}
+  {{#each comments as |comment|}}
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="card-text">{{comment.text}}</p>
+    </div>
+  </div>
+  {{/each}}
+  {{else}}
+  <p>No comments yet. Be the first to comment!</p>
+  {{/if}}
+
+  <form class="mt-4">
+    <div class="form-group">
+      <label for="commentInput">Add a Comment</label>
+      <textarea class="form-control" id="commentInput" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Comment</button>
+  </form>
+</div>
