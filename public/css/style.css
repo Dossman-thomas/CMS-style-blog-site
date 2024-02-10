@@ -40,7 +40,8 @@ p {
 }
 
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Agdasima", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -195,7 +196,16 @@ label {
   font-size: 3rem;
 }
 
+/* ------------------------------------------------------------- */
 
+/* Post/Comment CSS */
+
+#title-container {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
 
 
 
