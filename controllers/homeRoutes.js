@@ -105,7 +105,7 @@ router.get('/signup', (req, res) => {
 });
 
 // Handle the route for editing a post ('/editpost/:id')
-router.get('/editpost/:id', async (req, res) => {
+router.get('/edit-post/:id', async (req, res) => {
 
   try {
 
@@ -141,7 +141,7 @@ router.get('/editpost/:id', async (req, res) => {
     // Renders the 'edit-post' template with serialized post data and session information
     console.log('Rendering edit-post template with post data:', post);
 
-    res.render('editpost', {
+    res.render('edit-post', {
       ...post,
       logged_in: req.session.logged_in 
     });

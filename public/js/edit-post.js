@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   editButtons.addEventListener('click', (event) => {
     const postId = event.target.dataset.id;
-    window.location.href = `/editpost/${postId}`;
+    window.location.href = `/edit-post/${postId}`;
   });
 });
 
@@ -14,30 +14,37 @@ const editPostSubmitHandler = async (event) => {
 
   event.preventDefault(); 
 
-  const id = event.target.getAttribute('data-id');
-  const title = event.querySelector('#edit-title').value.trim();
-  const content = event.querySelector('#edit-content').value.trim(); 
+  // Get the post ID from the URL
+  const id = window.location.pathname.split('/').pop();
+  const title = document.querySelector('#edit-title').value.trim();
+  const content = document.querySelector('#edit-content').value.trim(); 
 
-  const response = await fetch(`/api/post/${id}`, {
-    method: 'PUT',
-    body: JSON.stringify({ title, content }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  console.log(id); 
 
-  console.log(response);
+  if (title && content){
 
-  if (response.ok) {
+    const response = await fetch(`/api/post/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ title, content }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-    document.location.replace('/dashboard');
-
-  } else {
-
-    alert('Failed to edit post');
-
+    console.log(title, content);
+  
+    console.log(response);
+  
+    if (response.ok) {
+  
+      document.location.replace('/dashboard');
+  
+    } else {
+  
+      alert('Failed to edit post');
+  
+    }
   }
-
 };
 
 document
