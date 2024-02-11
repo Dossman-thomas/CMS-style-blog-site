@@ -29,6 +29,7 @@ const editPostSubmitHandler = async (event) => {
       headers: {
         'Content-Type': 'application/json',
       },
+      
     });
 
     console.log(title, content);

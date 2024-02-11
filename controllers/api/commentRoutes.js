@@ -25,30 +25,30 @@ router.post('/', withAuth, async (req, res) => { // defines a new POST route for
 });
 
 // Edit an existing comment route
-router.put('/:id', withAuth, async (req, res) => {
+// router.put('/:id', withAuth, async (req, res) => {
 
-  try {
+//   try {
     
 
-  } catch (err) {
+//   } catch (err) {
     
-    res.status(400).json(err); // If there's an error (e.g., validation error), it responds with a status code of 400 (Bad Request) and sends the error details in the response JSON
+//     res.status(400).json(err); // If there's an error (e.g., validation error), it responds with a status code of 400 (Bad Request) and sends the error details in the response JSON
 
-  }
+//   }
 
-});
+// });
 
-// Delete a comment route
-router.delete('/:id', withAuth, async (req, res) => {
+// // Delete a comment route
+// router.delete('/:id', withAuth, async (req, res) => {
 
-  try {
+//   try {
     
 
-  } catch (err) {
+//   } catch (err) {
     
-    res.status(400).json(err); // If there's an error (e.g., validation error), it responds with a status code of 400 (Bad Request) and sends the error details in the response JSON
+//     res.status(400).json(err); // If there's an error (e.g., validation error), it responds with a status code of 400 (Bad Request) and sends the error details in the response JSON
 
-  }
-});
+//   }
+// });
 
 module.exports = router; // exports the configured router, making it available for use in other parts of the application

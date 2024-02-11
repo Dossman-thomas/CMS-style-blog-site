@@ -19,4 +19,10 @@ module.exports = {
     }
   },
 
+  console_log: () => {
+    // console log arguments 
+    const args = Array.from(arguments).slice(0, -1); // Exclude the last argument (options)
+    console.log(...args);
+  },
+
 };
