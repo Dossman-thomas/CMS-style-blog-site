@@ -13,7 +13,7 @@ router.get('/', async (req, res) => { // The route is specified as '/', meaning 
       include: [
         {
           model: User,
-          attributes: 'username'
+          attributes: ['username']
         }
       ]
     }); 
@@ -37,14 +37,14 @@ router.get('/:id', withAuth, async (req, res) => { // The route is specified wit
       include: [
         {
           model: User,
-          attributes: 'username'
+          attributes: ['username']
         },
         {
           model: Comment,
           include: [
             {
               model: User,
-              attributes: 'username'
+              attributes: ['username']
             }
           ]
         }
@@ -60,7 +60,7 @@ router.get('/:id', withAuth, async (req, res) => { // The route is specified wit
     
   } catch (err) {
     
-    res.status(500).json(err); // If an error occurs during the execution of the try block (e.g., a database error), it catches the error. It then responds with a status code of 500 (Internal Server Error) and sends the error details in the response JSON
+    res.status(500).json(err); // If an error occurs during the execution of the try block (e.g., a database error), catch the error. then respond with a status code of 500 (Internal Server Error) and sends the error details in the response JSON
 
   }
 
