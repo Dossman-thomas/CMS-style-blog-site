@@ -1,4 +1,3 @@
-// const { post } = require("../../controllers/api/commentRoutes");
 
 // editPostSubmitHandler
 const createCommentSubmitHandler = async (event) => {
