@@ -1,10 +1,12 @@
 // edit button href handler
 document.addEventListener('DOMContentLoaded', () => {
-  const editButtons = document.querySelector('.edit-btn');
+  const editButtons = document.querySelectorAll('.edit-btn');
 
-  editButtons.addEventListener('click', (event) => {
-    const postId = event.target.dataset.id;
-    window.location.href = `/edit-post/${postId}`;
+  editButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const postId = event.target.dataset.id;
+      window.location.href = `/edit-post/${postId}`;
+    });
   });
 });
 
