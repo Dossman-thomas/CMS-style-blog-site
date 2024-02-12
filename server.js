@@ -15,7 +15,7 @@ const hbs = exphbs.create({ helpers: require("./utils/helpers") }); // handlebar
 const sess = { // defines session config object w/secret key, cookie settings and sequelize store
   secret: 'Very secret',
   cookie: {
-    // maxAge: 300000,
+    maxAge: 500000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',

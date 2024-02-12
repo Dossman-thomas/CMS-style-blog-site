@@ -121,7 +121,7 @@ h4 {
   gap: 20px; /* Adjust the gap between cards */
 }
 
-.card {
+.post-card {
   margin: 15px;
   padding: 25px;
   border-radius: 8px;
@@ -133,7 +133,7 @@ h4 {
   align-items: center;
 }
 
-.card:hover {
+.post-card:hover {
   border: 5px solid black;
   transition: .3s;
 }
@@ -205,20 +205,44 @@ label {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 3rem;
+  background: linear-gradient(to bottom, white, var(--light), var(--hover));
   box-shadow: -8px 20px 15px rgba(0, 0, 0, 0.778);
   padding: 15px;
   border-radius: 16px;
+  border: 5px solid white; 
 }
 
 #post-container {
   display: flex;
   flex-direction: column;
-  box-shadow: -8px 20px 15px rgba(0, 0, 0, 0.778);
+  background-color: black;
+  box-shadow: -8px 20px 45px rgba(0, 0, 0, 0.778);
   padding: 30px;
   margin-bottom: 5rem;
   border-radius: 16px;
 }
 
+#post-title,
+#user-info {
+  color: black;
+}
+
+.comment-card {
+
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+.comment-container {
+  background-color: var(--dark);
+  box-shadow: -8px 20px 15px rgba(0, 0, 0, 0.778);
+  padding: 30px;
+}
+
+.comment-content {
+  margin-right: 30px;
+}
 
 
 

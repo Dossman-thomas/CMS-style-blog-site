@@ -2,11 +2,11 @@
 
   <div id="title-container">
 
-    <h2>
+    <h2 id="post-title">
       {{title}}
     </h2>
 
-    <p>
+    <p id="user-info">
       by: {{user.username}} on {{format_date date_created}}
     </p>
 
@@ -20,23 +20,23 @@
 
 <div class="container mt-4">
 
-  <h4>
+  <h3>
     Comments
-  </h4>
+  </h3>
 
   {{#if comments.length}} 
 
   {{#each comments as |comment|}}
 
-  <div class="card mb-3">
+  <div class="card mb-3 comment-container">
 
-    <div class="card-body">
+    <div class="card-body comment-card">
 
-      <p class="card-text">
+      <p class="card-text comment-content">
         {{comment.content}}
       </p>
 
-      {{!-- <p>- {{user.username}} on {{format_date date_posted}}</p> --}}
+      <p>- {{user.username}} on {{format_date date_posted}}</p>
 
     </div>
 

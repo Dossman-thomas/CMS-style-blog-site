@@ -14,7 +14,7 @@ const comments = [
     post_id: 2,
   },
   {
-    content: 'I have a question about this topic...',
+    content: 'Cannot wait to learn more about this!',
     user_id: 3,
     post_id: 1,
   },
