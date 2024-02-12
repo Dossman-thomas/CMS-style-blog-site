@@ -2,7 +2,7 @@
 
   <div class="col-auto">
     <h2 id="welcome">
-      Welcome, {{username}}!
+      Welcome, <span id="user-welcome">{{username}}!</span>
     </h2>
   </div>
 
@@ -67,7 +67,7 @@
 
   <div class="col-md-6 post-list">
 
-    <h3>Current Posts:</h3>
+    <h3>Your Posts:</h3>
 
     {{#each posts as |post|}}
 
@@ -75,15 +75,15 @@
 
       <div class="col-md-8">
 
-        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+        <h4><a id="post-title-link" href="/post/{{post.id}}">{{post.title}}</a></h4>
 
       </div>
 
       <div class="col-md-4">
 
-        <button class="btn btn-sm edit-btn" data-id="{{post.id}}">EDIT</button>
+        <button class="btn btn-sm edit-btn" id="update-post-btn" data-id="{{post.id}}">EDIT</button>
 
-        <button class="btn btn-sm btn-danger delete-btn" data-id="{{post.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger delete-btn" id="delete-post-btn" data-id="{{post.id}}">DELETE</button>
 
       </div>
 

@@ -29,7 +29,7 @@ const comments = [
     post_id: 2, 
   },
   {
-    content: 'Interesting topic. Can you elaborate on...?',
+    content: 'Interesting topic. Can you elaborate?',
     user_id: 5, 
     post_id: 3, 
   },
